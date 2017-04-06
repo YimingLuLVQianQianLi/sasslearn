@@ -1,0 +1,10 @@
+#wrap a {
+  color: #cac;
+}
+#wrap-content {
+  color: red;
+  width: 5;
+  font: 10px/2px;
+}
+
+/*# sourceMappingURL=interpolation.css.map */

@@ -1,0 +1,72 @@
+@charset "UTF-8";
+@mixin if1($isT) {
+	font-size: if($isT, 12px, 14px);  //if例子
+}
+@mixin if2($isBackground,$color) {
+	@if $isBackground {background: $color;}	 //@if例子
+	//  @ if 2 > 1 {display: block;}
+	//  @ if null {display: none;}
+}
+@mixin if3($type) {
+	// 多重判断
+	@if $type == white {
+		background: #fff;
+	} @else if $type == black {
+		background: #000;
+	} @else {
+		background: green;
+	}
+}
+@mixin dt_w {
+	@for $w from 10 through 16 { //for 用法
+		.dt_w#{$w*10} dt{
+			min-width: $w * 10px;
+		}
+	}
+}
+@mixin contextMenu($list) { //each实战用法
+	#contextMenu dl dt span.public_img{
+		 background-image: url(../img/contextMenu/public_contextMenu.png);
+	}
+	@each $name in $list {
+		#contextMenu dl dt span.#{$name} {
+			@extend .public_img;
+		}	
+	}
+	
+}
+@mixin contextMenuPosition($map){ //each map实战用法
+	@each $key,$value in $map {
+		#contextMenu dl dt span.#{$key} {
+			background-position: $value
+		}
+	}
+}
+@mixin while { //while用法
+	$val: 160;	
+	@while $val > 100 {
+		.dt_w#{$val} {
+			min-width: $val + px;
+		}
+		$val: $val - 10;	
+	}
+}
+#wrap {
+	@include if1(true);
+}
+
+#wrap {
+	@include if2(true, green);
+}
+#wrap {
+	@include if3(white);
+}
+@include dt_w;
+
+$names: create,edit,del;
+@include contextMenu($names);
+
+$namesMap: (create:0 2px, edit: 0 10px, del: 0 18px);
+@include contextMenuPosition($namesMap);
+
+@include while;

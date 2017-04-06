@@ -1,0 +1,37 @@
+@charset "UTF-8";
+/*定一个普通的@mixin*/
+@mixin clearfix {
+	&:after {
+		content: ' ';
+		display: block;
+		font-size: 0;
+		clear: both;
+	} 
+}
+#wrap {
+	@include clearfix;
+}
+/* 定义一个包含@mixin的@mixin*/
+@mixin clearfix-boxder {
+	border: 1px solid #ccc;
+	@include clearfix;
+}
+
+#wrap {
+	@include clearfix-boxder;
+}
+/* 带参数*/
+@mixin param( $width, $height, $color) {
+	width: $width;
+	height: $height;
+	background-color: $color
+} 
+
+#wrap {
+	@include param (200px, 300px, #ccc)
+}
+/* 变量参数...引用参数列表*/
+$values: 100px, 100px, green;
+#wrap {
+	@include param($values...);
+} 

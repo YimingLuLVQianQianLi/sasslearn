@@ -1,0 +1,31 @@
+@charset "UTF-8";
+#wrap {
+	font-size: 14px;
+
+	@at-root {
+		//不被包含在里边编译
+		#footer {
+			font-size: 12px;
+		}
+		#header {
+			font-size: 12px;
+		}	
+	}
+	@debug 10px + 10px; // 打印出来
+	#cotent {
+		font-size: 12px;
+		@warn "content font-size: 12px"
+	}
+}
+
+@mixin error($a, $b) {
+	@warn "a的值是 #{$a}";//告警用于调试
+	@if 12px != $b {
+		 @error "$b不等于12px"; //报错误使用	
+	} 
+	width: $a;
+}
+#wrap1 {
+	@include error(12px, 12px);
+	//@include error(12px, 14px); //有错误回编译失败
+}

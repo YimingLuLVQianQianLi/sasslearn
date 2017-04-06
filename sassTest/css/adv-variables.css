@@ -1,0 +1,28 @@
+@charset "UTF-8";
+#wrap {
+  border-width: 1px;
+}
+#wrap a {
+  display: inline-block;
+  width: 40px;
+}
+
+#wrap1 {
+  /* width: $local_width; */
+  /* 这里是不能使用的，这样写编译会报错 */
+}
+
+/*提升嵌套内部的变量为全局*/
+#wrap {
+  border-width: 1px;
+}
+#wrap a {
+  display: inline-block;
+  width: 40px;
+}
+
+#wrap2 {
+  width: 40px;
+}
+
+/*# sourceMappingURL=adv-variables.css.map */

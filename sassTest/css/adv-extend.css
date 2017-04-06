@@ -1,0 +1,14 @@
+#wrap div.one, #wrap div#three {
+  color: #ccc;
+}
+
+.one, #three {
+  margin: 0;
+  padding: 0;
+}
+
+#two {
+  font-size: 12px;
+}
+
+/*# sourceMappingURL=adv-extend.css.map */

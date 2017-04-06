@@ -1,0 +1,17 @@
+@charset "UTF-8";
+$el: a;
+$class: content;
+$val: 10px;
+$val1: 2px;
+#wrap {
+	#{$el} {
+		color: #c#{$el}c;
+
+	}
+	&-#{$class} {
+		color: red;
+		width: $val/$val1;
+		//区别，#{}会识别它是css操作而不做运算
+		font: #{$val}/#{$val1};
+	}
+}

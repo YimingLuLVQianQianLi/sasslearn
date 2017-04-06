@@ -1,0 +1,25 @@
+@charset "UTF-8";
+#wrap {
+	$local_width: 40px;
+	border-width: $local_width - 39px;
+	a {
+		display: inline-block;
+		width:$local_width;
+	}
+}
+#wrap1 {
+	/* width: $local_width; */
+	/* 这里是不能使用的，这样写编译会报错 */
+}
+/*提升嵌套内部的变量为全局*/ 
+#wrap {
+	$local_one: 40px !global;
+	border-width: $local_one - 39px;
+	a {
+		display: inline-block;
+		width: $local_one;
+	}
+}
+#wrap2 {
+	width: $local_one;
+}

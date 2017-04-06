@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAGA,8BAAkB;EACjB,KAAK,EAAE,IAAI;;;AAGZ,YAAK;EAEJ,MAAM,EAAC,CAAC;EACR,OAAO,EAAC,CAAC;;;AAEV,IAAK;EAEJ,SAAS,EAAE,IAAI",
+"sources": ["../sass/adv-extend.scss"],
+"names": [],
+"file": "adv-extend.css"
+}

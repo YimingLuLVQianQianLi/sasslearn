@@ -1,0 +1,35 @@
+@charset "UTF-8";
+/*定一个普通的@mixin*/
+#wrap:after {
+  content: ' ';
+  display: block;
+  font-size: 0;
+  clear: both;
+}
+
+/* 定义一个包含@mixin的@mixin*/
+#wrap {
+  border: 1px solid #ccc;
+}
+#wrap:after {
+  content: ' ';
+  display: block;
+  font-size: 0;
+  clear: both;
+}
+
+/* 带参数*/
+#wrap {
+  width: 200px;
+  height: 300px;
+  background-color: #ccc;
+}
+
+/* 变量参数...引用参数列表*/
+#wrap {
+  width: 100px;
+  height: 100px;
+  background-color: green;
+}
+
+/*# sourceMappingURL=mixin.css.map */
