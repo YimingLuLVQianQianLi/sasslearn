@@ -1,4 +1,4 @@
-<h3 align="center"> Sass 入门学习</h3>
+# Sass入门学习
 #### 1.sass是什么？
 sass是CSS的扩展语言。
 > - Sass是由Hampton Catlin 设想的，然而他不知道编码方式
